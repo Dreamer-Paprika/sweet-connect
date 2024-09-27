@@ -11,6 +11,11 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+   background-image: linear-gradient(
+    to bottom,
+    #FFB8CA 50%,
+    #FFF5F6
+  );
 }
 
 #root{
