@@ -1,0 +1,51 @@
+.formLabel {
+  display: inline-block;
+  font-weight: 700;
+  margin-bottom: 3px;
+  color: rgb(114, 17, 17);
+    background-color: rgb(240, 164, 65);
+    border: 1px solid #721111;
+    border-radius: 5px;
+    padding: 2px;
+    margin-bottom: 3px;
+}
+
+.formInput {
+display: block;
+  color: rgb(114, 17, 17);
+  border-radius: 4px;
+  background-color: rgb(240, 164, 65);
+  padding: 3px;
+  border: 1px solid rgb(114, 17, 17);
+  margin-top: 3px;
+  font-family: 'Comic Sans MS';
+  font-weight: 700;
+}
+
+.contactsList{
+display: flex;
+  flex-direction: column;
+  gap:15px;
+  list-style:circle;
+  margin-top: 10px;
+  background-color: rgb(240, 164, 65);
+    border: 2px solid #721111;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.contactsItem{
+    background-color: rgb(235, 144, 25);
+    border: 1px solid #721111;
+    border-radius: 4px;
+    padding: 8px;
+    color: #721111;
+}
+
+.contactsData{
+  background-color: rgb(240, 164, 65);
+    border: 1px solid #721111;
+    border-radius: 4px;
+    padding: 2px;
+    font-weight: 700;
+}

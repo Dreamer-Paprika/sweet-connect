@@ -1,0 +1,14 @@
+.footer{
+    text-align: center;
+    background-color: rgb(235, 144, 25);
+    width:100%;
+    font-family: 'Comic Sans MS';
+    font-weight: 700;
+    padding: 3px;
+    color: rgb(114, 17, 17);
+    border-top: 1px solid rgb(114, 17, 17);
+}
+
+.suspense{
+    flex-grow: 1;
+}

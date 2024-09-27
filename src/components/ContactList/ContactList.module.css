@@ -1,0 +1,74 @@
+.contactsSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  background-color: rgb(235, 144, 25);
+  border: 1px solid rgba(15, 15, 15, 0.3);
+  border-radius: 4px;
+  padding: 20px;
+  max-height: fit-content;
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 10px 12px -6px rgba(0, 0, 0, 0.4);
+}
+
+.contactsTitle {
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+    color: #f1dbba;
+    font-family: 'Comic Sans MS';
+    text-shadow: 3px 3px 20px rgb(114, 17, 17), 5px 5px 5px #000000;
+}
+
+.contactsList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  list-style: circle;
+      background-color: rgb(240, 164, 65);
+    border: 2px solid #721111;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.contactsData{
+  background-color: rgb(240, 164, 65);
+  border: 1px solid #721111;
+    border-radius: 4px;
+    padding: 3px;
+    font-weight: 700;
+}
+
+.contactsItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(235, 144, 25);
+    border: 1px solid #721111;
+    border-radius: 4px;
+    padding: 5px;
+    color: #721111;
+}
+
+.contactsDetails {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contactsName{
+    font-weight: 700;
+}
+
+.contactsButton{
+    padding: 3px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgb(238, 236, 236);
+  font-family: 'Comic Sans MS';
+  font-weight: 700;
+  cursor: pointer;
+    border: 1px solid rgba(15, 15, 15, 0.3);
+    color: #f1dbba;
+    background-color: rgb(114, 17, 17);
+}

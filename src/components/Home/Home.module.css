@@ -1,0 +1,36 @@
+.homeDisplay{
+  text-align: center;
+}
+
+.homeTitle{
+  padding-top: 60px;
+    font-weight: 700;
+    font-size: 36px;
+    color: #f1dbba;
+    font-family: 'Comic Sans MS';
+    text-shadow: 3px 3px 20px rgb(114, 17, 17), 5px 5px 5px #000000;
+    padding-bottom: 20px;
+}
+
+.homeLink{
+    padding: 10px;
+    border: 1px solid rgba(15, 15, 15, 0.3);
+    border-radius: 10px;
+    color: #f1dbba;
+    font-family: 'Comic Sans MS';
+    font-weight: 700;
+    cursor: pointer;
+    background-color: rgb(114, 17, 17);
+    display: inline-block;
+    margin: 30px;
+}
+
+.homeIntro{
+  font-family: 'Comic Sans MS';
+  width: 1000px;
+  color: rgb(114, 17, 17);
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 25px;
+  font-weight: 700;
+}
