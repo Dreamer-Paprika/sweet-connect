@@ -34,7 +34,7 @@ export const retrieveApiKey = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const res = await axios.get('/contacts/retrieve');
-      console.log(res.data);
+      //console.log(res.data);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
