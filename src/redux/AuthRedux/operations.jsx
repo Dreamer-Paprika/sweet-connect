@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import Notiflix from 'notiflix';
 
 axios.defaults.baseURL = 'http://localhost:8000/api';
 
@@ -20,10 +21,15 @@ const clearAuthHeader = () => {
 export const register = createAsyncThunk(
   'auth/register',
   async ({ name, email, password }, thunkAPI) => {
+    Notiflix.Loading.pulse('Registering Your Account...', {
+      svgColor: '#FFB8CA',
+      fontFamily: 'Comic Sans Ms',
+    });
     try {
       const res = await axios.post('/users/signup', { name, email, password });
       // After successful registration, add the token to the HTTP header
       //setAuthHeader(res.data.token);
+       Notiflix.Loading.remove();
       return res.data;
     } catch (error) {
       alert(
@@ -42,10 +48,15 @@ export const register = createAsyncThunk(
 export const logIn = createAsyncThunk(
   'auth/login',
   async ({ email, password }, thunkAPI) => {
+    Notiflix.Loading.pulse('Logging You In...', {
+      svgColor: '#FFB8CA',
+      fontFamily: 'Comic Sans Ms',
+    });
     try {
       const res = await axios.post('/users/login', { email, password });
       // After successful login, add the token to the HTTP header
       setAuthHeader(res.data.token);
+       Notiflix.Loading.remove();
       return res.data;
     } catch (error) {
       alert('Incorrect email or password');
@@ -59,10 +70,15 @@ export const logIn = createAsyncThunk(
  * headers: Authorization: Bearer token
  */
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
+    Notiflix.Loading.pulse('Logging You Out...', {
+      svgColor: '#FFB8CA',
+      fontFamily: 'Comic Sans Ms',
+    });
   try {
     await axios.get('/users/logout');
     // After a successful logout, remove the token from the HTTP header
     clearAuthHeader();
+     Notiflix.Loading.remove();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }

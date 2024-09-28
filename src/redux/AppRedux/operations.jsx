@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import Notiflix from 'notiflix';
 
 
 export const getApiKey = createAsyncThunk(
@@ -9,11 +10,7 @@ export const getApiKey = createAsyncThunk(
           customMetaData,
           customAccountId
   }, thunkAPI) => {
-    console.log({
-      name,
-      customMetaData,
-      customAccountId,
-    });
+   
     try {
       const res = await axios.post('/contacts/key', {
         name,
@@ -32,9 +29,13 @@ export const getApiKey = createAsyncThunk(
 export const retrieveApiKey = createAsyncThunk(
   'contacts/retrieveKey',
   async (_, thunkAPI) => {
+    Notiflix.Loading.pulse('Loading data, please wait...', {
+      svgColor: '#FFB8CA',
+    });
     try {
       const res = await axios.get('/contacts/retrieve');
       //console.log(res.data);
+      Notiflix.Loading.remove();
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

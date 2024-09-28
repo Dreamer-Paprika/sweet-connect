@@ -17,7 +17,7 @@ const retrieveKey = async (req, res) => {
 const createAPIkey = async (req, res, next) => {
   const { name, customMetaData, customAccountId } = req.body;
   try {
-    console.log(req.body);
+    //console.log(req.body);
     const key = await theAuthAPI.apiKeys.createKey({
       projectId: PROJECT_ID,
       customMetaData: { metadata_val: customMetaData },

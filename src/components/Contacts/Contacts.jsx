@@ -77,6 +77,7 @@ export const Contacts = () => {
               create an API KEY, fill the form bellow to create an API KEY.
             </span>
             {isMyValLoading && !error && <b>Generating your API KEY...</b>}
+            {error && !isMyValLoading && <b>Could not Generate Key</b>}
             <div className={css.formContainer}>
               <form
                 className={css.form}

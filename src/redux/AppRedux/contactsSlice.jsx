@@ -14,6 +14,12 @@ const handlePending = state => {
 
 const handleKeyPending = state => {
   state.contacts.isKeyLoading = true;
+  state.contacts.error = null;
+};
+
+const handleKeyRejected = (state, action) => {
+  state.contacts.isKeyLoading = false;
+  state.contacts.error = action.payload;
 };
 const handleRejected = (state, action) => {
   state.contacts.isLoading = false;
@@ -47,7 +53,7 @@ const contactsSlice = createSlice({
         state.contacts.error = null;
         state.contacts.val = action.payload.key;
       })
-      .addCase(getApiKey.rejected, handleRejected)
+      .addCase(getApiKey.rejected, handleKeyRejected)
       .addCase(retrieveApiKey.pending, handlePending)
       .addCase(retrieveApiKey.fulfilled, (state, action) => {
         state.contacts.isLoading = false;
