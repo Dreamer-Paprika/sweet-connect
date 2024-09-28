@@ -35,6 +35,7 @@ export const register = createAsyncThunk(
       alert(
         'Incorrect email or password format, or email has already been registered'
       );
+      Notiflix.Loading.remove();
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -60,6 +61,7 @@ export const logIn = createAsyncThunk(
       return res.data;
     } catch (error) {
       alert('Incorrect email or password');
+      Notiflix.Loading.remove();
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -80,6 +82,7 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     clearAuthHeader();
      Notiflix.Loading.remove();
   } catch (error) {
+    Notiflix.Loading.remove();
     return thunkAPI.rejectWithValue(error.message);
   }
 });

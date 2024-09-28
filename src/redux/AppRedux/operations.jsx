@@ -31,6 +31,7 @@ export const retrieveApiKey = createAsyncThunk(
   async (_, thunkAPI) => {
     Notiflix.Loading.pulse('Loading data, please wait...', {
       svgColor: '#FFB8CA',
+      fontFamily: 'DM Sans',
     });
     try {
       const res = await axios.get('/contacts/retrieve');
@@ -38,6 +39,7 @@ export const retrieveApiKey = createAsyncThunk(
       Notiflix.Loading.remove();
       return res.data;
     } catch (error) {
+      Notiflix.Loading.remove();
       return thunkAPI.rejectWithValue(error.message);
     }
   }

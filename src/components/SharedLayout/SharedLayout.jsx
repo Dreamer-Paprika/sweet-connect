@@ -39,7 +39,7 @@ export const SharedLayout = () => {
             <Frame role="img" aria-label="computer icon">
               <img src={logoImage} alt="Logo" width="50px" />
             </Frame>
-            <IconLabel>Yellow</IconLabel>
+            <IconLabel>Sweet</IconLabel>
             <IconLabel>Connect</IconLabel>
           </Logo>
         </Symbol>

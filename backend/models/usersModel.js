@@ -28,6 +28,18 @@ const userSchema = new Schema(
       type: String,
       default: null,
     },
+    apiKeyName: {
+      type: String,
+      default: null,
+    },
+    apiAccountId: {
+      type: String,
+      default: null,
+    },
+    apiCreationDate: {
+      type: String,
+      default: null,
+    },
   },
   { versionKey: false }
 );

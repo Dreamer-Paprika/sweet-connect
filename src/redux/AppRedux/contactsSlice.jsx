@@ -36,6 +36,9 @@ const contactsSlice = createSlice({
       isKeyLoading: false,
       error: null,
       val: null,
+      valName: null,
+      valId: null,
+      valDate: null,
     },
   },
   extraReducers: builder => {
@@ -58,7 +61,10 @@ const contactsSlice = createSlice({
       .addCase(retrieveApiKey.fulfilled, (state, action) => {
         state.contacts.isLoading = false;
         state.contacts.error = null;
-        state.contacts.val = action.payload;
+        state.contacts.val = action.payload.apiKey;
+        state.contacts.valName = action.payload.apiKeyName;
+        state.contacts.valId = action.payload.apiAccountId;
+        state.contacts.valDate = action.payload.apiCreationDate;
       })
       .addCase(retrieveApiKey.rejected, handleRejected)
       .addCase(addContact.pending, handlePending)

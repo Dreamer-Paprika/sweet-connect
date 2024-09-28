@@ -9,14 +9,15 @@ export const Container = styled.div`
 
 export const Frame = styled.div`
   border-radius: 50%;
-  background-color: rgb(114, 17, 17);
+  background-color:#FFB8CA;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 70px;
-  height: 70px;
-  border: 3px solid #f1dbba;
+  width: 80px;
+  height: 80px;
+  border: 3px solid #fff;
+  box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.3);
 `;
 
 export const Icon = styled.svg`
@@ -24,11 +25,12 @@ export const Icon = styled.svg`
 `;
 
 export const IconLabel = styled.span`
-  font-family: 'Sansita Swashed';
-  font-size: 20px;
-  color: #f1dbba;
+  font-family: 'Sacramento';
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
   text-shadow: 3px 3px 20px rgb(114, 17, 17), 5px 5px 5px #000000;
-  margin: 2px;
+  margin: 5px;
 
   &::first-letter {
     font-size: 30px;
@@ -37,12 +39,12 @@ export const IconLabel = styled.span`
 
 export const Greeting = styled.div`
   font-family: 'Sansita Swashed';
-  font-size: 20px;
-  color: #f1dbba;
-  text-shadow: 3px 3px 20px rgb(114, 17, 17), 5px 5px 5px #000000;
+  font-size: 25px;
+  color: #fff;
+
   margin: 2px;
-  display:inline-block;
-  font-weight:700;
+  display: inline-block;
+  font-weight: 700;
   &::first-letter {
     font-size: 30px;
   }
@@ -54,18 +56,25 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 10px 0;
+  padding: 20px;
   margin-bottom: 8px;
   margin-top: 8px;
-  border: 5px solid #f1dbba;
-  background-color: rgb(216, 155, 75);
-  background-color: rgb(235, 144, 25);
-  border-radius: 4px;
+  border: none;
+  background-color: #c4253a;
+  background-image: linear-gradient(to bottom, #c4253a 40%, #ffb8ca);
+  border-radius: 30px;
   filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.3));
+  
+
+  &:hover {
+    
+  }
 
   > nav {
     display: flex;
-    font-family: 'Comic Sans MS';
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans';
     padding: 10px;
     gap: 5px;
   }
@@ -79,22 +88,40 @@ export const Logo = styled.div`
 `;
 
 export const Link = styled(NavLink)`
-  padding: 8px 16px;
+  padding: 8px 12px;
   border-radius: 4px;
   text-decoration: none;
-  color: rgb(114, 17, 17);
+  color: #fff;
   font-weight: 700;
-  background-color: rgb(240, 164, 65);
-  border: 1px solid rgb(114, 17, 17);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left;
+  }
 
   &.active {
-    color: #f1dbba;
-    background-color: rgb(114, 17, 17);
   }
 
   &:hover {
-    color: #f1dbba;
-    background-color: rgb(114, 17, 17);
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  &.active::after {
+    transform: scaleX(1);
   }
 `;
 
@@ -102,18 +129,38 @@ export const Button = styled.button`
   padding: 8px 16px;
   border-radius: 4px;
   text-decoration: none;
-  color: rgb(114, 17, 17);
+  color: #fff;
   font-weight: 700;
-  background-color: rgb(240, 164, 65);
-  border: 1px solid rgb(114, 17, 17);
-  font-family: 'Comic Sans MS';
-  cursor:pointer;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
   font-size: 16px;
-  
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left;
+  }
 
   &:hover {
-    color: #f1dbba;
-    background-color: rgb(114, 17, 17);
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  &.active::after {
+    transform: scaleX(1);
   }
 `;
 

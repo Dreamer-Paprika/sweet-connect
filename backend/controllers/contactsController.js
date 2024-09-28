@@ -10,8 +10,8 @@ import TheAuthAPI from "theauthapi";
 const theAuthAPI = new TheAuthAPI(ACCESS_TOKEN);
 
 const retrieveKey = async (req, res) => {
-  const { apiKey } = req.user;
-  res.json(apiKey);
+  const { apiKey, apiKeyName, apiAccountId, apiCreationDate } = req.user;
+  res.json({apiKey,apiKeyName,apiAccountId,apiCreationDate});
 };
 
 const createAPIkey = async (req, res, next) => {
@@ -26,7 +26,12 @@ const createAPIkey = async (req, res, next) => {
     });
     console.log('Key created > ', key);
     const { _id } = req.user;
-    await User.findByIdAndUpdate(_id, { apiKey: key.key });
+    await User.findByIdAndUpdate(_id, {
+      apiKey: key.key,
+      apiKeyName: key.name,
+      apiAccountId: key.customAccountId,
+      apiCreationDate: key.createdAt,
+    });
     res.json(key);
   } catch (error) {
     console.log("Couldn't make the key ", error);
