@@ -14,7 +14,7 @@
 .homeLink{
     padding: 10px;
     border: 1px solid #c4253a;
-    border-radius: 10px;
+    border-radius: 30px;
     color: #c4253a;
     font-family: 'DM Sans';
     font-weight: 700;
@@ -27,6 +27,7 @@
     margin-bottom: 10px;
     width: 160px;
     display: block;
+    filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.3));
 }
 
 .homeLink:hover{

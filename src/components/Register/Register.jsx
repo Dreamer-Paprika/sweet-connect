@@ -34,7 +34,7 @@ const handleSubmit = e => {
             <div role="img" aria-label="computer icon" className={css.frame}>
               <img src={logoImage} alt="Logo" width="50px" />
             </div>
-            <span className={css.iconLabel}>Yellow</span>
+            <span className={css.iconLabel}>Sweet</span>
             <span className={css.iconLabel}>Connect</span>
           </div>
         </div>
