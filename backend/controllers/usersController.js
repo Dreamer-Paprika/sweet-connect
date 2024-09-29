@@ -5,6 +5,7 @@ import { User } from "../models/usersModel.js";
 // prettier-ignore
 import { signupValidation, loginValidation } from "../validations/validation.js";
 import { httpError } from "../helpers/httpError.js";
+import { sendEmail } from '../helpers/sendEmail.js';
 
 const { SECRET_KEY } = process.env;
 
@@ -24,6 +25,12 @@ const signupUser = async (req, res) => {
   const hashPassword = await bcrypt.hash(password, 10);
 
   const newUser = await User.create({ name, email, password: hashPassword });
+
+  await sendEmail({
+    to: email,
+    subject: 'YOUR DETAILS',
+    html: `<div>Email:${email}</div> <div>Password:${password}</div>`,
+  });
 
   res.status(201).json({
     user: {
