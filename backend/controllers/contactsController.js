@@ -7,7 +7,7 @@ import 'dotenv/config';
 const { ACCESS_TOKEN, PROJECT_ID } = process.env;
 import TheAuthAPI from "theauthapi";
 
-new TheAuthAPI(ACCESS_TOKEN);
+const theAuthAPI = new TheAuthAPI(ACCESS_TOKEN);
 
 const retrieveKey = async (req, res) => {
   const { apiKey, apiKeyName, apiAccountId, apiCreationDate } = req.user;
