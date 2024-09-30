@@ -48,6 +48,7 @@
 .detailsSection{
   padding: 10px;
   background-color: #FFA5BA;
+  background-image: linear-gradient(to bottom, #ffb8ca 40%, #c4253a);
   display: inline-block;
   border-radius: 30px;
   filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.3));
@@ -67,7 +68,7 @@
 
 .detailsWrapper{
   /*background-image: linear-gradient(to bottom, #c4253a 40%, #ffb8ca);*/
-  background-color: #c4253a;
+  /*background-color: #c4253a;*/
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
@@ -77,6 +78,9 @@
   flex-direction: column;
   justify-content: center;
   gap:5px;
+  border: 1px solid hsla(0, 0%, 6%, .3);
+    border-radius: 30px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .3), 0 2px 4px -1px rgba(0, 0, 0, .2), 0 10px 12px -6px rgba(0, 0, 0, 0.4);
 }
 
 .detailsItem{
