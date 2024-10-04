@@ -37,7 +37,7 @@ export const Login = () => {
     <>
       <div className={css.loginContainer}>
         <div className={css.login}>
-          <div to="/" className={css.symbol}>
+          <div className={css.symbol}>
             <div className={css.logo}>
               <div role="img" aria-label="computer icon" className={css.frame}>
                 <img src={logoImage} alt="Logo" width="50px" />

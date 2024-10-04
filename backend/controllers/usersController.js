@@ -26,11 +26,12 @@ const signupUser = async (req, res) => {
 
   const newUser = await User.create({ name, email, password: hashPassword });
 
-  await sendEmail({
+ /* await sendEmail({
     to: email,
     subject: 'YOUR DETAILS',
     html: `<div>Email:${email}</div> <div>Password:${password}</div>`,
   });
+  */
 
   res.status(201).json({
     user: {
